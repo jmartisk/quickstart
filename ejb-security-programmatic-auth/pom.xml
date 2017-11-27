@@ -40,6 +40,13 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-ejb-client-bom</artifactId>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron</artifactId>
         </dependency>
@@ -87,6 +94,7 @@
                                       also adding the project build directory -->
                         <argument>-classpath</argument>
                         <classpath></classpath>
+                        <argument>-Dremote.ejb.host=${remote.ejb.host}</argument>
                         <argument>org.jboss.as.quickstarts.ejb_security_programmatic_auth.RemoteClient</argument>
                     </arguments>
                 </configuration>

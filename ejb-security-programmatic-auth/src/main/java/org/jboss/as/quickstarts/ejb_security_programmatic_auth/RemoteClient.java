@@ -55,7 +55,7 @@ public class RemoteClient {
     static final Callable<String> callable = () -> {
         final Hashtable<String, String> jndiProperties = new Hashtable<>();
         jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, "org.wildfly.naming.client.WildFlyInitialContextFactory");
-        jndiProperties.put(Context.PROVIDER_URL, "remote+http://localhost:8080");
+        jndiProperties.put(Context.PROVIDER_URL, "remote+http://" + System.getProperty("remote.ejb.host", "localhost") + ":8080");
         final Context context = new InitialContext(jndiProperties);
 
         SecuredEJBRemote reference = (SecuredEJBRemote) context.lookup("ejb:/ejb-security-programmatic-auth/SecuredEJB!"
