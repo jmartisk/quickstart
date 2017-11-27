@@ -94,6 +94,7 @@
                                       also adding the project build directory -->
                         <argument>-classpath</argument>
                         <classpath></classpath>
+                        <argument>-Dremote.ejb.host=${remote.ejb.host}</argument>
                         <argument>org.jboss.as.quickstarts.ejb_security_context_propagation.RemoteClient</argument>
                     </arguments>
                 </configuration>
